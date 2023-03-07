@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import NextImage from 'next/image';
 
 const ZoomImage = ({ src, fadeDuration, top, left, isZoomed, onLoad, onDragStart, onDragEnd, onClose, onFadeOut }) => {
   return (
     <Fragment>
-      <img
+      <NextImage
         className={`iiz__zoom-img ${isZoomed ? 'iiz__zoom-img--visible' : ''}`}
         style={{
           top: top,

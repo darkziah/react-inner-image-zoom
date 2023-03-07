@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import NextImage from 'next/image';
 
 const Image = ({ src, sources, width, height, hasSpacer, imgAttributes, isZoomed, fadeDuration }) => {
   const createSpacer = width && height && hasSpacer;
@@ -12,7 +13,7 @@ const Image = ({ src, sources, width, height, hasSpacer, imgAttributes, isZoomed
             return <Fragment key={i}>{source.srcSet && <source {...source} />}</Fragment>;
           })}
 
-          <img
+          <NextImage
             {...imgAttributes}
             className={`iiz__img ${imgAttributes.className || ''} ${isZoomed ? 'iiz__img--hidden' : ''} ${
               createSpacer ? 'iiz__img--abs' : ''
@@ -28,7 +29,7 @@ const Image = ({ src, sources, width, height, hasSpacer, imgAttributes, isZoomed
           />
         </picture>
       ) : (
-        <img
+        <NextImage
           {...imgAttributes}
           className={`iiz__img ${imgAttributes.className || ''} ${isZoomed ? 'iiz__img--hidden' : ''} ${
             createSpacer ? 'iiz__img--abs' : ''
