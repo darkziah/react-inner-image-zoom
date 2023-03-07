@@ -2,7 +2,20 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import NextImage from 'next/image';
 
-const ZoomImage = ({ src, fadeDuration, top, left, isZoomed, onLoad, onDragStart, onDragEnd, onClose, onFadeOut }) => {
+const ZoomImage = ({
+  src,
+  fadeDuration,
+  top,
+  left,
+  isZoomed,
+  onLoad,
+  onDragStart,
+  onDragEnd,
+  onClose,
+  onFadeOut,
+  width,
+  height
+}) => {
   return (
     <Fragment>
       <NextImage
@@ -21,6 +34,8 @@ const ZoomImage = ({ src, fadeDuration, top, left, isZoomed, onLoad, onDragStart
         onTransitionEnd={onFadeOut}
         draggable="false"
         alt=""
+        width={width}
+        height={height}
       />
 
       {onClose && (
@@ -47,7 +62,9 @@ ZoomImage.propTypes = {
   onDragStart: PropTypes.func,
   onDragEnd: PropTypes.func,
   onClose: PropTypes.func,
-  onFadeOut: PropTypes.func
+  onFadeOut: PropTypes.func,
+  width: PropTypes.number,
+  height: PropTypes.number
 };
 
 export default ZoomImage;

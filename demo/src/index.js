@@ -11,9 +11,11 @@ class Demo extends Component {
         <div style={{ marginBottom: '30px' }}>
           <h2>Pan Example</h2>
           <InnerImageZoom
-            src="unsplash.jpg"
-            zoomSrc="unsplash-large.jpg"
+            src="/unsplash.jpg"
+            zoomSrc="/unsplash-large.jpg"
             fullscreenOnMobile={false}
+            width={750}
+            height={500}
             imgAttributes={{
               src: 'test',
               'data-key': 'value',
@@ -27,25 +29,14 @@ class Demo extends Component {
         <div style={{ marginBottom: '30px' }}>
           <h2>Hover Example</h2>
           <InnerImageZoom
-            src="unsplash2.jpg"
+            src="/unsplash2.jpg"
             width={750}
             height={500}
             hasSpacer={true}
-            zoomSrc="unsplash2-large.jpg"
+            zoomSrc="/unsplash2-large.jpg"
             zoomType="hover"
             zoomPreload={true}
             fullscreenOnMobile={true}
-          />
-        </div>
-        <div style={{ marginBottom: '30px' }}>
-          <h2>Drag Example</h2>
-          <InnerImageZoom
-            src="unsplash3.jpg"
-            zoomSrc="unsplash3-large.jpg"
-            fullscreenOnMobile={true}
-            moveType="drag"
-            zoomScale={0.9}
-            zoomPreload={true}
           />
         </div>
       </div>

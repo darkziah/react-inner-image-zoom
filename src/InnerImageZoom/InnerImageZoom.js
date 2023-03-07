@@ -267,6 +267,8 @@ const InnerImageZoom = ({
     top,
     left,
     isZoomed,
+    width,
+    height,
     onLoad: handleLoad,
     onDragStart: currentMoveType === 'drag' ? handleDragStart : null,
     onDragEnd: currentMoveType === 'drag' ? handleDragEnd : null,
